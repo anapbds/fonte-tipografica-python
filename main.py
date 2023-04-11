@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import transformacoes
 #import letras
 
 class Window:
@@ -13,17 +14,17 @@ class Window:
 
     def inputs(self, Wnd):
         # input da string
-        Label(Wnd, text='Digite a String (max. 5 letras):').grid(row=0)
+        Label(Wnd, text='Digite a String (max. 5 letras):').grid(row=0, sticky='e')
 
         #input comprimento dos poliedros (dimensão de z)
-        Label(Wnd, text='Comprimento dos poliedros:').grid(row=1)
+        Label(Wnd, text='Comprimento dos poliedros:').grid(row=1, sticky='e')
         e1 = Entry(Wnd)
         e2 = Entry(Wnd)
-        e1.grid(row=0, column=1)
-        e2.grid(row=1, column=1)
+        e1.grid(row=0, column=1, sticky='w')
+        e2.grid(row=1, column=1, sticky='w')
 
-        btn = Button(Wnd, text="Ok")
-        btn.grid(row=1, column=2)
+        btn = Button(Wnd, text="Gerar 3D")
+        btn.grid(row=2, column=1)
 
     def framesTela(self,Wnd): #interface das 3 viewports (frente, lateral e topo)
         fonte = ("Roboto", "10", "bold")
@@ -42,13 +43,13 @@ class Window:
         self.FramePerspectiva.grid(row=4, column=1, columnspan=1, ipadx= 180 , ipady= 140, padx= 1, pady=1)
 
         self.FrameOpcoes = LabelFrame(Wnd, bg='#c7cce7', text="Menu - Opções", font = fonte)
-        self.FrameOpcoes.grid(row=0, column=2, rowspan=100, ipadx=100, ipady=308)
+        self.FrameOpcoes.grid(row=0, column=3, rowspan=100, ipadx=100, ipady=308)
 
     def ClearCanvas(self):
         self.canvas.delete("all")
 
     def AboutTI(self):
-        messagebox.showinfo(title = "Sobre...", message = "Trabalho de CG feito pelas alunas Alessandra e Ana Paula")
+        messagebox.showinfo(title = "Sobre...", message = "Trabalho de CG feito pelas alunas Alessandra dos Santos e Ana Paula Bernardes")
 
     def CreateMenu(self, Wnd) :
         MenuBar = Menu(Wnd)
