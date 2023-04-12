@@ -23,27 +23,27 @@ class Window:
         e1.grid(row=0, column=1, sticky='w')
         e2.grid(row=1, column=1, sticky='w')
 
-        btn = Button(Wnd, text="Gerar 3D")
-        btn.grid(row=2, column=1)
+        btn = Button(Wnd, text="Gerar 3D", bg='#eeffff')
+        btn.grid(row=2, column=1, sticky='nw', ipadx=34)
 
     def framesTela(self,Wnd): #interface das 3 viewports (frente, lateral e topo)
         fonte = ("Roboto", "10", "bold")
 
-        self.FrameFrente = LabelFrame(Wnd, bg='#c7cce7', text = "Frente ", font = fonte)
-        self.FrameFrente.grid(row=3, column=0, columnspan=1, ipadx= 180 , ipady= 140, padx= 1, pady=5)
+        self.FrameFrente = LabelFrame(Wnd, bg='#eeffff', text = "Frente ", font = fonte)
+        self.FrameFrente.grid(row=3, column=0, columnspan=1, ipadx= 280 , ipady= 172, padx= 5, pady=5)
 
-        self.FrameLateral = LabelFrame(Wnd, bg='#c7cce7', text = "Lateral", font = fonte)
-        self.FrameLateral.grid(row=3, column=1, columnspan=1, ipadx= 180 , ipady= 140, padx= 1, pady=5)
+        self.FrameLateral = LabelFrame(Wnd, bg='#eeffff', text = "Lateral", font = fonte)
+        self.FrameLateral.grid(row=3, column=1, columnspan=1, ipadx= 280 , ipady= 172, padx= 5, pady=5)
 
-        self.FrameTopo = LabelFrame(Wnd, bg='#c7cce7', text = "Topo ", font = fonte) 
-        self.FrameTopo.grid(row=4, column=0, columnspan=1, ipadx= 180 , ipady= 140, padx= 1, pady=1)
+        self.FrameTopo = LabelFrame(Wnd, bg='#eeffff', text = "Topo ", font = fonte) 
+        self.FrameTopo.grid(row=4, column=0, columnspan=1, ipadx= 280 , ipady= 172, padx= 5, pady=1)
 
         # 4ª viewport projeção perspectiva ou paralela 
-        self.FramePerspectiva = LabelFrame(Wnd, bg='#c7cce7', text = "Perspectiva", font = fonte)
-        self.FramePerspectiva.grid(row=4, column=1, columnspan=1, ipadx= 180 , ipady= 140, padx= 1, pady=1)
+        self.FramePerspectiva = LabelFrame(Wnd, bg='#eeffff', text = "Perspectiva", font = fonte)
+        self.FramePerspectiva.grid(row=4, column=1, columnspan=1, ipadx= 280 , ipady= 172, padx= 5, pady=1)
 
-        self.FrameOpcoes = LabelFrame(Wnd, bg='#c7cce7', text="Menu - Opções", font = fonte)
-        self.FrameOpcoes.grid(row=0, column=3, rowspan=100, ipadx=100, ipady=308)
+        self.FrameOpcoes = LabelFrame(Wnd, bg='#eeffff', text="Menu - Opções", font = fonte)
+        self.FrameOpcoes.grid(row=0, column=3, rowspan=100, ipadx=200, ipady=384)
 
     def ClearCanvas(self):
         self.canvas.delete("all")
